@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm neutral luxury palette */
+    --background: 35 33% 98%; /* sand */
+    --foreground: 24 14% 14%; /* charcoal */
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 14% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 14% 14%;
+
+    --primary: 30 35% 40%; /* bronze */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 35 30% 94%;
+    --secondary-foreground: 24 14% 20%;
+
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 10% 40%;
+
+    --accent: 35 28% 90%;
+    --accent-foreground: 24 14% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 12% 86%;
+    --input: 30 12% 86%;
+    --ring: 30 35% 40%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 35 30% 96%;
+    --sidebar-foreground: 24 14% 20%;
+    --sidebar-primary: 30 35% 40%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 35 28% 92%;
+    --sidebar-accent-foreground: 24 14% 20%;
+    --sidebar-border: 30 12% 86%;
+    --sidebar-ring: 30 35% 40%;
+
+    /* Effects */
+    --shadow-elegant: 0 10px 30px -12px hsl(var(--primary) / 0.25);
+  }
+
+  .dark {
+    --background: 24 14% 10%;
+    --foreground: 35 33% 98%;
+
+    --card: 24 14% 12%;
+    --card-foreground: 35 33% 98%;
+
+    --popover: 24 14% 12%;
+    --popover-foreground: 35 33% 98%;
+
+    --primary: 30 40% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 10% 16%;
+    --secondary-foreground: 35 33% 96%;
+
+    --muted: 24 10% 16%;
+    --muted-foreground: 35 20% 75%;
+
+    --accent: 24 10% 16%;
+    --accent-foreground: 35 33% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 24 10% 20%;
+    --input: 24 10% 20%;
+    --ring: 30 40% 52%;
+
+    --sidebar-background: 24 14% 10%;
+    --sidebar-foreground: 35 33% 96%;
+    --sidebar-primary: 30 40% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 10% 16%;
+    --sidebar-accent-foreground: 35 33% 96%;
+    --sidebar-border: 24 10% 16%;
+    --sidebar-ring: 30 40% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Inter, ui-sans-serif, system-ui;
+  }
+
+  h1,h2,h3,h4 { font-family: "Playfair Display", ui-serif, Georgia; }
+}
+
+@layer utilities {
+  .story-link {
+    @apply relative inline-block after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  .hover-scale { @apply transition-transform duration-200 hover:scale-105; }
+}
